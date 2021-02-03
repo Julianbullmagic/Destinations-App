@@ -1,0 +1,17 @@
+<div>
+  <div id="main">
+  <div id="details">
+<h1>{{item.name}}</h1>
+<h4><strong>Description: </strong>{{item.description}}</h4>
+<h4><strong>Costs: </strong>$${{item.amount}}</h4>
+<h4><strong>Latitude: </strong>{{item.latitude}}</h4>
+<h4><strong>Longitude: </strong>{{item.longitude}}</h4>
+</div>
+<div id="map"
+leaflet
+(leafletMapReady)="onMapReady($event)"
+[leafletOptions]="mapOptions">
+</div>
+</div>
+
+</div>

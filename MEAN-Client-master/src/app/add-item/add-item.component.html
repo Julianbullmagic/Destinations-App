@@ -1,0 +1,66 @@
+<a class="back" routerLink='/'><i class="fas fa-arrow-left"></i></a>
+<section class="additemsection">
+
+  <form (ngSubmit)="addItem(itemsForm.value)" [formGroup]="itemsForm">
+
+    <h2>Product Form</h2>
+    <p>Fill the form to add a new item to the store.</p>
+
+   <div class="formcontrol">
+    <label for="name">Destination Name:</label>
+    <input type="text" formControlName="name">
+  </div>
+
+  <div class="formcontrol">
+    <label for="description">Description:</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+  <div class="formcontrol">
+      <label for="image">Image: </label>
+      <input type="url" name="image" formControlName="image">
+  </div>
+  <div class="formcontrol">
+      <label for="amount"> Costs: </label>
+      <input type="number" name="amount" formControlName="amount">
+  </div>
+  <div class="formcontrol">
+      <label for="latitude">Latitude</label>
+      <input type="number" name="latitude" formControlName="latitude">
+  </div>
+  <div class="formcontrol">
+      <label for="latitude">Longitude</label>
+      <input type="number" name="longitude" formControlName="longitude">
+  </div>
+    <input type="submit" [disabled]="!itemsForm.valid" value="Submit">
+  </form>
+
+
+  <div class="previewsection">
+    <h2>Product Preview</h2>
+
+    <div>
+      <p>Product Image:</p>
+      <div *ngIf="image && image.startsWith('https://'); else showPlaceholder">
+        <p>In case you cant see a preview, check the url links to an image: </p>
+        <img class="image"  [src]=image alt="product preview image" />
+      </div>
+      <ng-template #showPlaceholder>
+        <img class="image" src="../../assets/images.png" alt="image placeholder" />
+      </ng-template>
+
+    </div>
+    <div>
+      <p>Product price: <span>${{amount}}</span></p>
+    </div>
+    <div>
+      <p>Product Name: <span>{{name}}</span></p>
+      <p>Product description: <span>{{description}}</span></p>
+      <p>Latitude: <span>{{latitude}}</span></p>
+      <p>Longitude: <span>{{longitude}}</span></p>
+
+
+    </div>
+
+
+  </div>
+</section>

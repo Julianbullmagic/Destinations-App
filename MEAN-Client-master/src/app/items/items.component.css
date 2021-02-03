@@ -1,0 +1,9 @@
+
+
+.items{
+    display:flex;
+    flex-wrap:wrap;
+  }
+.itemsdiv{
+  width:200px;
+}

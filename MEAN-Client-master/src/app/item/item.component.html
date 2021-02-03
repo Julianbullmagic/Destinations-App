@@ -1,0 +1,62 @@
+<a class="back" routerLink='/'><i class="fas fa-arrow-left"></i></a>
+<section class="updateitemsection">
+
+  <form (ngSubmit)="updateItem(updateItemForm.value)" [formGroup]="updateItemForm">
+
+    <h2>Update Product Form</h2>
+    <p>Change the form values to update the current item in the store.</p>
+
+   <div class="formcontrol">
+    <label for="name">Product Name:</label>
+    <input type="text" formControlName="name">
+  </div>
+
+  <div class="formcontrol">
+    <label for="description">Product Description:</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+  <div class="formcontrol">
+      <label for="image"> Product Image: </label>
+      <input type="url" name="image" formControlName="image">
+  </div>
+  <div class="formcontrol">
+      <label for="amount"> Product Price Per Item: </label>
+      <input type="number" name="amount" formControlName="amount">
+  </div>
+  <div class="formcontrol">
+      <label for="latitude"> Latitude: </label>
+      <input type="number" name="amount" formControlName="latitude">
+  </div>
+  <div class="formcontrol">
+      <label for="longitude"> Longitude: </label>
+      <input type="number" name="amount" formControlName="longitude">
+  </div>
+    <input type="submit" [disabled]="!updateItemForm.valid" value="Submit">
+  </form>
+
+
+  <div class="previewsection">
+    <button (click)="deleteItem(item._id)">Delete this item</button>
+
+    <h2>Product Preview</h2>
+
+    <div>
+      <p>Product Image:</p>
+      <div *ngIf="item">
+        <img class="image" [src]="item.image" alt="image placeholder" />
+      </div>
+    </div>
+    <div>
+      <p>Product price: <span>{{amount}}</span></p>
+    </div>
+    <div>
+      <p>Product Name: <span>{{name}}</span></p>
+      <p>Product description: <span>{{description}}</span></p>
+      <p>Latitude: <span>{{latitude}}</span></p>
+      <p>Longiude: <span>{{longitude}}</span></p>
+
+    </div>
+
+
+  </div>
+</section>
