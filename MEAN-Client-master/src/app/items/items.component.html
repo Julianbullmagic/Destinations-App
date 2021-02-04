@@ -1,9 +1,9 @@
 
 <section>
-  <h2 class="transform">Items</h2>
+  <h2 class="transform">Locations</h2>
 
-  <div >
-    <div class="items" *ngFor="let item of items">
+  <div class="items">
+    <div *ngFor="let item of items">
       <div class="itemsdiv">
       <img src="{{item.image}}" style="width: 40%;
       margin: 10px;">
@@ -11,6 +11,7 @@
      <div >
       <h3>{{item.name}}</h3>
       <a [routerLink]="[ '/details', item._id ]">More Info</a>
+
       <a [routerLink]="[ '/item', item._id ]">Check/Edit Item</a>
     </div>
     </div>
