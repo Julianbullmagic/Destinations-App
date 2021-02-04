@@ -51,9 +51,9 @@ mongoose.connect(
 
   server.use((req, res, next)=>{
     //we say what we want to allow, you can whitelist IPs here or domains
-    res.header("Access-Control-Allow-Origin", "*"); 
+    res.header("Access-Control-Allow-Origin", "*");
     //what kind of headers we are allowing
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");  
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
     //check for the options request from browsers
     //this will always be sent
@@ -65,7 +65,7 @@ mongoose.connect(
             "statusMessage": "ok"
         });
     }
-   
+
     next();
 });
 
@@ -94,6 +94,9 @@ server.use((error, req, res, next)=>{
 
 
 
+
+
+
 const port = process.env.PORT || 8000;
 
 
@@ -101,5 +104,3 @@ const port = process.env.PORT || 8000;
 server.listen(port, ()=>{
     console.log("Server is running @ localhost:8000");
 });
-
-
