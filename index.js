@@ -19,7 +19,7 @@ server.use(bodyParser.json());
 server.use(cors());
 
 //get the files from dist folder
-let distDir = __dirname + "/MEAN-Client-master/dist/";
+let distDir = __dirname + "/MEAN-Client-master/dist/meanapp";
 server.use(express.static(distDir));
 
 
