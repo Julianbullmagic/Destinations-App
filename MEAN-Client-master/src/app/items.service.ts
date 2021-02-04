@@ -10,7 +10,7 @@ export class ItemsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  server:string = "http://localhost:8000/";
+  server:string = process.env.PORT||"http://localhost:8000/";
 
   //get all items
   getItems(){
@@ -33,7 +33,7 @@ export class ItemsService {
       latitude: itemObj["latitude"],
       longitude: itemObj["longitude"]
     }
-    
+
     //post an item
     return this.httpClient.post(this.server + "items", JSON.stringify(obj), {headers: headers});
   }
