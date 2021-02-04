@@ -29,7 +29,7 @@ const mongoose = require("mongoose");
 const item = require("./routes/item");
 
 mongoose.connect(
-    database.connection, { useNewUrlParser: true })
+    database.connection, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(connection => {
     console.log("connection stablished")
   })
@@ -102,5 +102,5 @@ const port = process.env.PORT || 8000;
 
 //create the server
 server.listen(port, ()=>{
-    console.log("Server is running @ localhost:8000");
+    console.log(`Server is running @ ${port}`);
 });
