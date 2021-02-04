@@ -23,6 +23,8 @@ let distDir = __dirname + "/MEAN-Client-master/dist/";
 server.use(express.static(distDir));
 
 
+
+
 //mongoose
 const mongoose = require("mongoose");
 //routes
