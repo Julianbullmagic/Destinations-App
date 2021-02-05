@@ -19,7 +19,9 @@ body * {
 #mapid { width: 300px; }
 header {
     background: url("https://s1.it.atcdn.net/wp-content/uploads/2015/11/shutterstock_279572969.jpg") center;
-    
+    background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
     position: relative;
     height: 600px;
     overflow: hidden;
